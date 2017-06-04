@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>控制台</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../styles/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../styles/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-inverse fixed-top bg-inverse">
+        <a class="navbar-brand" href="#">控制台</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/index.html">主页<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="logout">注销</a>
+                </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-faded sidebar">
+
+                <h3>数据信息</h3>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./dashboard.html">数据源</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./dictionary.html">数据字典</a>
+                    </li>
+                </ul>
+
+                <h3>功能指南</h3>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./import.html">导入功能</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./export.html">导出功能</a>
+                    </li>
+                </ul>
+                <h3>个人信息设置</h3>
+                <ul class="nav nav-pills flex-column" role="menu" aria-label="down">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./personal.html">查看个人信息</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./changePersonal.html">修改个人信息</a>
+                    </li>
+                </ul>
+
+            </nav>
+
+            <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+                <h1>数据源</h1>
+                <section class="row text-center placeholders">
+                    <div class="col-6 col-sm-3 placeholder">
+                        <img src="../images/mysql.jpg" width="230" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+                        <h4>Mysql</h4>
+                    </div>
+                    <div class="col-6 col-sm-3 placeholder">
+                        <img src="../images/hive_logo.png" width="230" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+                        <h4>Hive</h4>
+                    </div>
+                    <div class="col-6 col-sm-3 placeholder">
+                        <img src="../images/txt_logo.png" width="230" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+                        <h4>Txt</h4>
+                    </div>
+                </section>
+
+                <div>
+                    <b class="datasource">数据源信息</b>
+                    <a id="modal-183920" href="#modal-container-183920" role="button" class="btn" data-toggle="modal">添加数据源</a>
+
+                    <div class="modal fade" id="modal-container-183920" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h4 class="modal-title" id="myModalLabel">
+                                        添加数据源
+                                    </h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal" role="form" id="job">
+                                        <div class="form-group">
+                                            <label for="datasourceName" class="col-md-3 control-label">数据源名称</label>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control" id="datasourceName" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="datasourceHost" class="col-md-4 control-label">数据源主机号</label>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control" id="datasourceHost" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="datasourcePort" class="col-sm-4 control-label">数据源端口号</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="datasourcePort" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="datasourceType" class="col-sm-3 control-label">数据源类型</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="datasourceType" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="username" class="col-sm-3 control-label">用户名</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="username" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password" class="col-sm-3 control-label">密码</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="password" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                    <button type="button" class="btn btn-primary" id="save">保存</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-striped" id="datasourceTable">
+                        <thead>
+                            <tr>
+                                <th>数据源类型</th>
+                                <th>驱动名称</th>
+                                <th>URL地址</th>
+                                <th>用户名</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <!--<tbody>
+                            <tr>
+                                <td>Mysql</td>
+                                <td>com.mysql.jdbc.Driver</td>
+                                <td>jdbc:mysql://127.0.0.1:3306/medusa</td>
+                                <td>root</td>
+                            </tr>
+                            <tr>
+                                <td>Hive</td>
+                                <td>org.apache.hive.jdbc.HiveDriver</td>
+                                <td>jdbc:hive2://bd-datanode1:10000,bd-datanode2:10000/</td>
+                                <td>hive</td>
+                            </tr>
+                        </tbody>-->
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../scripts/logout.js"></script>
+    <script src="../scripts/datasources.js"></script>
+    <!--IE10 viewport hack for Surface/desktop Windows 8 bug 
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+</body>
+
+</html>

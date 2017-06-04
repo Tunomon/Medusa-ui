@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>控制台</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../styles/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../styles/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-inverse fixed-top bg-inverse">
+        <a class="navbar-brand" href="#">控制台</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/index.html">主页<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="logout">注销</a>
+                </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-faded sidebar">
+
+                <h3>数据信息</h3>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./dashboard.html">数据源</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./dictionary.html">数据字典</a>
+                    </li>
+                </ul>
+
+                <h3>功能指南</h3>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./import.html">导入功能</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./export.html">导出功能</a>
+                    </li>
+                </ul>
+                <h3>个人信息设置</h3>
+                <ul class="nav nav-pills flex-column" role="menu" aria-label="down">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./personal.html">查看个人信息</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./changePersonal.html">修改个人信息</a>
+                    </li>
+                </ul>
+
+            </nav>
+
+            <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+                <h1>数据导入</h1>
+                <section class="row text-center placeholders">
+                    <div class="col-3 col-sm-3 placeholder">
+                        <img src="../images/mysql.jpg" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+                        <h4>Mysql</h4>
+                    </div>
+                    <div class="col-6 col-sm-3 placeholder">
+                        <img src="../images/right.png" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+                    </div>
+                    <div class="col-6 col-sm-3 placeholder">
+                        <img src="../images/hive_logo.png" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+                        <h4>Hive</h4>
+                    </div>
+                </section>
+
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-md-8 column">
+                            <form class="form-horizontal" role="form" id="job">
+                                <div class="form-group">
+                                    <label for="jobName" class="col-md-3 control-label">任务名称</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="jobName" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="importDatabase" class="col-md-3 control-label">导入数据库名</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="importDatabase" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="importTable" class="col-sm-3 control-label">导入表名</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="importTable" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hiveDatabase" class="col-sm-3 control-label">Hive库名</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="hiveDatabase" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hiveTable" class="col-sm-3 control-label">Hive生成表名</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="hiveTable" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="importTable" class="col-sm-3 control-label">分区键（默认为pt）</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="partitionKey" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="importTable" class="col-sm-4 control-label">分区值（默认为当天）</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="partitionValue" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-3 col-sm-10">
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" id="overwrite"/>是否覆盖原有数据</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-5 col-sm-10">
+                                        <button id="submitJob" type="button" class="btn btn-default">提交任务</button>
+                                    </div>
+                                </div>
+
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../scripts/logout.js"></script>
+    <script src="../scripts/import.js"></script>
+    <!--IE10 viewport hack for Surface/desktop Windows 8 bug 
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+</body>
+
+</html>
