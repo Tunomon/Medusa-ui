@@ -6,7 +6,7 @@ $(document).ready(function() {
         success: function(data) {
             var item;
             $.each(data, function(i, result) {
-                item = "<tr><td>" + result['typeString'] + "</td><td>" + result['driver'] + "</td><td>" + result['url'] + "</td><td>" + result['dbUsername'] + "</td><td>" +
+                item = "<tr><td>" + result['name'] + "</td><td>" + result['typeString'] + "</td><td>" + result['driver'] + "</td><td>" + result['url'] + "</td><td>" + result['dbUsername'] + "</td><td>" +
                     "<button onclick=update('" + result['id'] + "')>update</button>" + "<button onclick=deleteDatasource('" + result['id'] + "')>delete</button>" +
                     "</td></tr>";
                 $('#datasourceTable').append(item);

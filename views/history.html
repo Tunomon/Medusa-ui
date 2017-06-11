@@ -11,10 +11,10 @@
     <title>控制台</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../styles/bootstrap.min.css" rel="stylesheet">
+    <link href="../../styles/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../styles/dashboard.css" rel="stylesheet">
+    <link href="../../styles/dashboard.css" rel="stylesheet">
 </head>
 
 <body>
@@ -47,10 +47,13 @@
                 <h3>数据信息</h3>
                 <ul class="nav nav-pills flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" href="./dashboard.html">数据源</a>
+                        <a class="nav-link active" href="./dashboard.html">数据源</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="./dictionary.html">数据字典</a>
+                        <a class="nav-link" href="./dictionary.html">数据字典</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./history.html">历史任务</a>
                     </li>
                 </ul>
 
@@ -76,58 +79,38 @@
             </nav>
 
             <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-                <h1>数据字典</h1>
-                <section class="row text-center placeholders">
-                    <div class="col-6 col-sm-3 placeholder">
-                        <img src="../images/hive_logo.png" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-                        <h4>Hive</h4>
-                        <div>
-                            <form class="form-inline mt-2 mt-md-0">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                            </form>
-                            <table class="table table-striped" id="tableInfos">
-                                <thead>
-                                    <tr>
-                                        <th>表名</th>
-                                    </tr>
-                                </thead>
+                <h1>历史任务</h1>
 
-                            </table>
-                        </div>
-                    </div>
+                <div>
+                    <b class="datasource">历史任务信息</b>
+                </div>
 
-                    <div class="table-responsive">
-                        <h2 align="left">数据字典信息</h2>
-
-                        <h5 align="left">表信息</h5>
-
-                        <table class="table table-striped" id="tableInfo">
-                            <thead>
-                                <tr>
-                                    <th>表名</th>
-                                    <th>所属数据库</th>
-                                    <th>存储空间</th>
-                                    <th>是否分区表</th>
-                                    <th>是否扩展表</th>
-                                </tr>
-                            </thead>
-                        </table>
-
-                        <h5 align="left">表字段信息</h5>
-                        <table class="table table-striped" id="columnInfos">
-                            <thead>
-                                <tr>
-                                    <th>字段名称</th>
-                                    <th>字段类型</th>
-                                    <th>字段注释</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </section>
-
-
+                <div class="table-responsive">
+                    <table class="table table-striped" id="taskTable">
+                        <thead>
+                            <tr>
+                                <th>任务名</th>
+                                <th>jobId</th>
+                                <th>任务状态</th>
+                                <th>任务模板</th>
+                            </tr>
+                        </thead>
+                        <!--<tbody>
+                            <tr>
+                                <td>Mysql</td>
+                                <td>com.mysql.jdbc.Driver</td>
+                                <td>jdbc:mysql://127.0.0.1:3306/medusa</td>
+                                <td>root</td>
+                            </tr>
+                            <tr>
+                                <td>Hive</td>
+                                <td>org.apache.hive.jdbc.HiveDriver</td>
+                                <td>jdbc:hive2://bd-datanode1:10000,bd-datanode2:10000/</td>
+                                <td>hive</td>
+                            </tr>
+                        </tbody>-->
+                    </table>
+                </div>
             </main>
         </div>
     </div>
@@ -143,8 +126,7 @@
     <script src="../scripts/bootstrap.min.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="../scripts/logout.js"></script>
-    <script src="../scripts/dictionary.js"></script>
-    <script src="../scripts/loading.js"></script>
+    <script src="../scripts/datasources.js"></script>
     <!--IE10 viewport hack for Surface/desktop Windows 8 bug 
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
 </body>
